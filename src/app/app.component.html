@@ -1,0 +1,19 @@
+  <button (click)="addRowData()">Append row</button>
+  <button (click)="removeRowData()">Delete selected row</button>
+  <button (click)="updateOddRowData()">Update odd rows</button>
+  <button (click)="updateEvenRowData()">Update even rows</button>
+  <button (click)="resetRowData()">Reset rows</button>
+
+    <ag-grid-angular
+      #agGrid
+      style="width: 600px; height: 500px;"
+      id="myGrid"
+      class="ag-theme-alpine"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [immutableData]="true"
+      [getRowNodeId]="getRowNodeId"
+      [rowSelection]="'single'"
+      [rowData]="rowData"
+      (gridReady)="onGridReady($event)"
+    ></ag-grid-angular>
